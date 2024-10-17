@@ -217,10 +217,12 @@ export default function DashboardLayout({
                     <div className="flex-1 text-sm font-semibold leading-6 text-black">Dashboard</div>
                     <a href="#">
                         <span className="sr-only">Your profile</span>
-                        <img
+                        <Image
                             alt=""
                             src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                             className="h-8 w-8 rounded-full bg-gray-50"
+                            width={256} 
+                            height={256}
                         />
                     </a>
                 </div>
@@ -261,10 +263,12 @@ export default function DashboardLayout({
 
                                 <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" />
 
-                                <img
+                                <Image
                                     alt=""
                                     src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                     className="h-8 w-8 rounded-full bg-gray-50"
+                                    width={256} 
+                                    height={256}
                                 />
 
                             </div>
