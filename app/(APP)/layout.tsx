@@ -58,11 +58,12 @@ export default function DashboardLayout({
     children: React.ReactNode;
 }) {
     const [sidebarOpen, setSidebarOpen] = useState(false)
-    const [openDropdown, setOpenDropdown] = useState(null); // Track which dropdown is open
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null); 
 
-    const toggleDropdown = (name: any) => {
+    const toggleDropdown = (name: string | null) => {
         setOpenDropdown(openDropdown === name ? null : name);
     };
+    
     return (
         <>
             <div>
