@@ -21,7 +21,7 @@ function DashboardView() {
             <div className="border-t mt-5 mb-5 border-neutral-800 w-full" />
             <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-5">
                 {cardData.map((card, index) => (
-                    <InfoCard key={index} title={card.title} content={card.content} icon={card.icon} height={card.limitHeight} />
+                    <InfoCard key={index} title={card.title} content={card.content} icon={card.icon} height={card.limitHeight} spanFull={card.spanFull} />
                 ))}
             </div>
         </>
@@ -33,8 +33,7 @@ export default DashboardView;
 const cardData = [
     {
         title: "Player Info",
-        icon: <Image src={PlayerIcon} alt="" width={12} height={12}/>,
-        limitHeight: false,
+        icon: <Image src={PlayerIcon} alt="" width={12} height={12} />,
         content: [
             { label: "Status", badge: { text: "Active", variant: "default" } },
             { label: "Self-exclusion status", badge: { text: "Not self-excluded", variant: "black" } },
@@ -50,8 +49,7 @@ const cardData = [
     },
     {
         title: "Contact Details",
-        limitHeight: false,
-        icon: <Image src={CallIcon} alt="" width={16} height={16}/>,
+        icon: <Image src={CallIcon} alt="" width={16} height={16} />,
         content: [
             { label: "Address 1", value: "Rio de Janeiro" },
             { label: "City/Town", value: "Rio de Janeiro" },
@@ -66,9 +64,8 @@ const cardData = [
     },
     {
         title: "Additional and Misc Info",
-        limitHeight: false,
-        icon: <Image src={MiscIcon} alt="" width={16} height={16}/>,
-
+        icon: <Image src={MiscIcon} alt="" width={16} height={16} />,
+        spanFull: true,
         content: [
             { label: "Language", value: "Portuguese" },
             { label: "E-mail marketing consent", badge: { text: "Expired", variant: "secondary" } },
@@ -87,8 +84,7 @@ const cardData = [
     },
     {
         title: "Balance Info",
-        icon: <Image src={BalanceIcon} alt="" width={20} height={20}/>,
-
+        icon: <Image src={BalanceIcon} alt="" width={20} height={20} />,
         limitHeight: true,
         content: [
             { label: "GmWallet.RealCash", value: "$9,982.80" },
@@ -100,7 +96,7 @@ const cardData = [
     },
     {
         title: "Security Info",
-        icon: <Image src={SecurityIcon} alt="" width={18} height={18}/>,
+        icon: <Image src={SecurityIcon} alt="" width={18} height={18} />,
         limitHeight: true,
         content: [
             { label: "Personal ID", value: "123456789" },
@@ -112,13 +108,14 @@ const cardData = [
     },
     {
         title: "IP Addresses",
-        icon: <Image src={IpIcon} alt="" width={13} height={13}/>,
+        icon: <Image src={IpIcon} alt="" width={13} height={13} />,
         limitHeight: true,
+        spanFull: true,
         content: [
             {
                 label: "154.192.48.49",
                 country: "PK",
-            },
+            },  
             {
                 label: "192.168.0.1",
                 country: "AF",
@@ -140,24 +137,25 @@ const cardData = [
                 country: "FR",
             },
             {
-               
+
                 label: "192.0.2.1",
                 country: "JP",
             },
         ],
     },
 ];
-const InfoCard = ({ title, content, icon, height }: any) => (
+const InfoCard = ({ title, content, icon, height, spanFull }: any) => (
     <Card
         className={classNames(
             "w-full bg-neutral-900 text-primaryText border-neutral-700 rounded-lg",
-            height && "h-72 overflow-y-auto"
+            height && "h-72 overflow-y-auto",
+            spanFull && "md:col-span-2 2xl:col-span-1"
         )}
 
     >
         <CardHeader>
             <div className="flex items-center h-auto space-x-2">
-                
+
                 {icon}
                 <CardTitle>{title}</CardTitle>
             </div>
