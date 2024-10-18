@@ -98,7 +98,7 @@ const cardData = [
     },
 ];
 const InfoCard = ({ title, content, icon }: any) => (
-    <Card className="w-full bg-neutral-900 text-primaryText border-neutral- rounded-lg">
+    <Card className="w-full bg-neutral-900 text-primaryText border-neutral-700 rounded-lg">
         <CardHeader>
             <div className="flex items-center h-auto space-x-2">
                 <Image src={icon} alt={`${title} Icon`} width={16} height={16} />

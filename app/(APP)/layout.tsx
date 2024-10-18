@@ -13,12 +13,14 @@ import {
     XMarkIcon,
     ChevronDownIcon,
     Cog6ToothIcon,
+    BellIcon,
     ArrowRightCircleIcon,
     MagnifyingGlassIcon,
     EnvelopeIcon
 
 } from '@heroicons/react/24/outline'
 import AppLogo from '@/assests/Applogo.png'
+import UserAvatar from '@/assests/Ellipse 30.png'
 import Image from 'next/image'
 const navigation = [
     { name: 'Community', href: '#', icon: HomeIcon, current: true },
@@ -265,10 +267,12 @@ export default function DashboardLayout({
                                     className="-m-2.5 p-2.5 text-primaryText hover:text-gray-500"
                                 >
                                     <span className="sr-only">View notifications</span>
-                                    <EnvelopeIcon aria-hidden="true" className="h-6 w-6" />
+                                    <EnvelopeIcon aria-hidden="true" className="h-6 w-6 text-neutral-50" />
                                 </button>
 
-                                <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-200" />
+                                <div aria-hidden="true" className="hidden lg:block lg:h-6 lg:w-px lg:bg-neutral-800" />
+
+                                <BellIcon aria-hidden="true" className="h-6 w-6 text-neutral-50" />
 
                                 <Image
                                     alt=""
@@ -277,6 +281,10 @@ export default function DashboardLayout({
                                     width={256}
                                     height={256}
                                 />
+                                <div className='flex flex-col'>
+                                    <span className='text-xs text-white text-opacity-50'>Role of User</span>
+                                    <span className='text-sm font-medium text-white text-opacity-80'>Andrew Smith</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -284,13 +292,22 @@ export default function DashboardLayout({
 
                 <main className="lg:pl-72 text-primaryText">
                     <div className="xl:pl-72">
-                        <div className="px-4 py-10 sm:px-6 lg:px-8 lg:py-6">{children}</div>
+                        <div className="px-4 py-10 sm:px-6 lg:px-12 lg:py-6">{children}</div>
                     </div>
                 </main>
 
-                <aside className="fixed inset-y-0 left-72 hidden w-72 overflow-y-auto border-r border-neutral-800 border-blur-xl px-4 py-6 sm:px-6 lg:px-8 xl:block text-primaryText mt-20">
-                    <nav className="flex flex-col h-full">
-                        <ul className="flex flex-col gap-y-7 flex-grow">
+                <aside className="fixed inset-y-0 left-72 hidden w-80 overflow-y-auto border-r border-neutral-800 border-blur-xl px-4 py-6 sm:px-6 lg:px-8 xl:block text-primaryText mt-20">
+
+                    <nav className="flex flex-col h-full ">
+                        <div className='bg-neutral-900 border-neutral-800 flex items-center p-2 rounded-md'>
+                            <Image src={UserAvatar} width={36} height={36} alt="" />
+                            <div className='flex flex-col gap-.5 ml-3'>
+                                <span className='text-base text-white font-semibold'>Miss testing account</span>
+                                <span className='text-xs text-primaryText'>Umiiumii BV
+                                </span>
+                            </div>
+                        </div>
+                        <ul className="flex flex-col gap-y-7 mt-8 flex-grow">
                             {navigation.map((item) => (
                                 <li key={item.name} className="relative">
                                     <a
