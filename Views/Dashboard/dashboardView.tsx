@@ -172,7 +172,7 @@ const InfoCard = ({ title, content, icon, height }: any) => (
                         <div className="flex items-center">
                             {item.country && (
 
-                                <div className="w-10 h-10 flex items-center">
+                                <div className="w-10 h-auto flex items-center">
                                     <FlagIcon code={item.country} size={20} />
                                 </div>
                             )}
