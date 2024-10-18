@@ -33,11 +33,11 @@ export default DashboardView;
 const cardData = [
     {
         title: "Player Info",
-        icon: PlayerIcon,
+        icon: <Image src={PlayerIcon} alt="" width={12} height={12}/>,
         limitHeight: false,
         content: [
             { label: "Status", badge: { text: "Active", variant: "default" } },
-            { label: "Self-exclusion status", value: "Not self-excluded" },
+            { label: "Self-exclusion status", badge: { text: "Not self-excluded", variant: "black" } },
             { label: "User ID", value: "6297036" },
             { label: "Username", value: "yev_42" },
             { label: "Email", value: "yevgeni@test42@monkeytilt.co" },
@@ -51,7 +51,7 @@ const cardData = [
     {
         title: "Contact Details",
         limitHeight: false,
-        icon: CallIcon,
+        icon: <Image src={CallIcon} alt="" width={16} height={16}/>,
         content: [
             { label: "Address 1", value: "Rio de Janeiro" },
             { label: "City/Town", value: "Rio de Janeiro" },
@@ -67,7 +67,8 @@ const cardData = [
     {
         title: "Additional and Misc Info",
         limitHeight: false,
-        icon: MiscIcon,
+        icon: <Image src={MiscIcon} alt="" width={16} height={16}/>,
+
         content: [
             { label: "Language", value: "Portuguese" },
             { label: "E-mail marketing consent", badge: { text: "Expired", variant: "secondary" } },
@@ -86,7 +87,8 @@ const cardData = [
     },
     {
         title: "Balance Info",
-        icon: BalanceIcon,
+        icon: <Image src={BalanceIcon} alt="" width={20} height={20}/>,
+
         limitHeight: true,
         content: [
             { label: "GmWallet.RealCash", value: "$9,982.80" },
@@ -98,7 +100,7 @@ const cardData = [
     },
     {
         title: "Security Info",
-        icon: SecurityIcon,
+        icon: <Image src={SecurityIcon} alt="" width={16} height={16}/>,
         limitHeight: true,
         content: [
             { label: "Personal ID", value: "123456789" },
@@ -110,7 +112,7 @@ const cardData = [
     },
     {
         title: "IP Addresses",
-        icon: IpIcon,
+        icon: <Image src={IpIcon} alt="" width={13} height={13}/>,
         limitHeight: true,
         content: [
             {
@@ -155,21 +157,22 @@ const InfoCard = ({ title, content, icon, height }: any) => (
     >
         <CardHeader>
             <div className="flex items-center h-auto space-x-2">
-                <Image src={icon} alt={`${title} Icon`} width={20} height={20} />
+                
+                {icon}
                 <CardTitle>{title}</CardTitle>
             </div>
         </CardHeader>
         <CardContent>
             <div className="divide-y divide-neutral-800">
                 {content.map((item: any, index: number) => (
-                    <div key={index} className="py-2 flex justify-between">
+                    <div key={index} className="py-2 flex justify-between truncate">
                         <div className="flex items-center">
                             {item.country && (
                                 <div className="w-10 h-auto flex items-center">
                                     <FlagIcon code={item.country} size={20} />
                                 </div>
                             )}
-                            <span className="text-sm text-neutral-400">{item.label}</span>
+                            <span className="text-sm text-neutral-400 min-w-28">{item.label}</span>
                         </div>
                         {item.badge ? (
                             <Badge variant={item.badge.variant}>{item.badge.text}</Badge>

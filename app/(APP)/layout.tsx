@@ -19,7 +19,7 @@ import {
     EnvelopeIcon
 
 } from '@heroicons/react/24/outline'
-import AppLogo from '@/assests/Applogo.png'
+import AppLogo from '@/assests/AppLogo.svg'
 import UserAvatar from '@/assests/Ellipse 30.png'
 import Image from 'next/image'
 const navigation = [
