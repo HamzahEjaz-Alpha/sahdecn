@@ -142,7 +142,7 @@ export default function DashboardLayout({
                 <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
                     {/* Sidebar component, swap this element with another sidebar if you like */}
                     <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-neutral-800 bg-neutral-900 px-6">
-                        <div className="flex h-16 shrink-0 items-center mt-10">
+                        <div className="flex h-16 shrink-0 items-center justify-center mt-10">
                             <Image
                                 alt="Your Company"
                                 src={AppLogo}
@@ -301,8 +301,8 @@ export default function DashboardLayout({
                 <aside className="fixed inset-y-0 left-72 hidden w-80 overflow-y-auto border-r border-neutral-800 border-blur-xl px-4 py-6 sm:px-6 lg:px-8 xl:block text-primaryText mt-20">
 
                     <nav className="flex flex-col h-full ">
-                        <div className='bg-neutral-900 border-neutral-800 flex items-center p-2 rounded-md'>
-                            <Image src={UserAvatar} width={36} height={36} alt="" />
+                        <div className='bg-neutral-900 border border-neutral-800 flex items-center p-3 rounded-md'>
+                            <Image src={UserAvatar} width={40} height={40} alt="" />
                             <div className='flex flex-col gap-.5 ml-3'>
                                 <span className='text-base text-white font-semibold'>Miss testing account</span>
                                 <span className='text-xs text-primaryText'>Umiiumii BV
@@ -324,7 +324,7 @@ export default function DashboardLayout({
                             ))}
                         </ul>
 
-                        <div className="mt-auto bg-[#262626] p-4 rounded-lg w-auto -mb-[4%]">
+                        <div className="mt-auto bg-neutral-900 p-4 rounded-lg w-auto border border-neutral-800 -mb-[4%]">
                             <div className="text-left text-md text-white mb-2">Assigned roles</div>
                             <ul className="list-disc pl-5 text-sm text-primaryText">
                                 <li>Admin</li>

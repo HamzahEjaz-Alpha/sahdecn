@@ -15,7 +15,7 @@ function DashboardView() {
     return (
         <>
             <div className="flex justify-between items-center">
-                <span className="text-2xl font-semibold">Player Info</span>
+                <span className="text-2xl font-semibold text-white">Player Info</span>
                 <Button><PlusIcon aria-hidden="true" className="h-6 w-6" />Actions</Button>
             </div>
             <div className="border-t mt-5 mb-5 border-neutral-800 w-full" />
@@ -100,7 +100,7 @@ const cardData = [
     },
     {
         title: "Security Info",
-        icon: <Image src={SecurityIcon} alt="" width={16} height={16}/>,
+        icon: <Image src={SecurityIcon} alt="" width={18} height={18}/>,
         limitHeight: true,
         content: [
             { label: "Personal ID", value: "123456789" },
@@ -178,7 +178,7 @@ const InfoCard = ({ title, content, icon, height }: any) => (
                             <Badge variant={item.badge.variant}>{item.badge.text}</Badge>
                         ) : (
                             <div className="flex flex-col">
-                                <span className="text-sm font-medium text-neutral-50">{item.value}</span>
+                                <span className="text-sm font-medium text-neutral-100">{item.value}</span>
                                 {item.subText &&
                                     <span className="text-xs text-neutral-500">{item.subText}</span>
 
