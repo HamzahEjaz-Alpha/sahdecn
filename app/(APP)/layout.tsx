@@ -104,9 +104,9 @@ export default function DashboardLayout({
                                                 <a
                                                     href={item.href}
                                                     onClick={() => item.subNavigation && toggleDropdown(item.name)}
-                                                    className="group flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold leading-6  hover:bg-gray-50 hover:text-indigo-600"
+                                                    className="group flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold leading-6  text-primaryText hover:bg-neutral-800 hover:text-white0"
                                                 >
-                                                    <item.icon className="h-6 w-6 text-gray-400 group-hover:text-indigo-600" />
+                                                    <item.icon className="h-6 w-6 text-gray-400 group-hover:text-white" />
                                                     {item.name}
                                                     {item.subNavigation && (
                                                         <ChevronDownIcon
@@ -121,7 +121,7 @@ export default function DashboardLayout({
                                                             <li key={subItem.name}>
                                                                 <a
                                                                     href={subItem.href}
-                                                                    className="block rounded-md p-2 text-sm font-semibold leading-6 text-gray-600 hover:bg-gray-50 hover:text-indigo-600"
+                                                                    className="block rounded-md p-2 text-sm font-semibold leading-6 text-gray-600 text-primaryText hover:bg-neutral-800 hover:text-white0"
                                                                 >
                                                                     {subItem.name}
                                                                 </a>
@@ -142,15 +142,16 @@ export default function DashboardLayout({
                 <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
                     {/* Sidebar component, swap this element with another sidebar if you like */}
                     <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-neutral-800 bg-neutral-900 px-6">
-                        <div className="flex h-16 shrink-0 items-center justify-center mt-10">
+                        <div className="flex h-16 shrink-0 items-center justify-center mt-4">
                             <Image
                                 alt="Your Company"
                                 src={AppLogo}
-                                className="h-14 w-auto"
+                                className="h-auto w-auto"
                             />
                       
 
                         </div>
+                        <div className='border-t border-neutral-800 -mt-[2%]'/>
                         <nav className="flex flex-col h-full">
                             <ul className="flex flex-col gap-y-3 flex-grow">
                                 {navigation.map((item) => (
@@ -160,7 +161,7 @@ export default function DashboardLayout({
                                             onClick={() => item.subNavigation && toggleDropdown(item.name)}
                                             className="group flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-primaryText hover:bg-neutral-800 hover:text-white"
                                         >
-                                            <item.icon className="h-6 w-6 text-primaryText group-hover:text-white" />
+                                            <item.icon className="h-6 w-6 text-neutral-400 group-hover:text-white" />
                                             {item.name}
                                             {item.subNavigation && (
                                                 <ChevronDownIcon
@@ -214,26 +215,9 @@ export default function DashboardLayout({
                     </div>
                 </div>
 
-                <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-black px-4 py-4 shadow-sm sm:px-6 lg:hidden">
-                    <button type="button" onClick={() => setSidebarOpen(true)} className="-m-2.5 p-2.5 text-gray-700 lg:hidden">
-                        <span className="sr-only">Open sidebar</span>
-                        <Bars3Icon aria-hidden="true" className="h-6 w-6 text-primaryText" />
-                    </button>
-                    <div className="flex-1 text-sm font-semibold leading-6 text-black">Dashboard</div>
-                    <a href="#">
-                        <span className="sr-only">Your profile</span>
-                        <Image
-                            alt=""
-                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            className="h-8 w-8 rounded-full bg-gray-50"
-                            width={256}
-                            height={256}
-                        />
-                    </a>
-                </div>
-
+              
                 <div className="lg:sticky top-0 z-40 lg:pl-72">
-                    <div className="flex h-16 items-center gap-x-4 border-b border-neutral-800 bg-black px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+                    <div className="flex h-24 items-center gap-x-4 border-b border-neutral-800 bg-black px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
                         <button
                             type="button"
                             onClick={() => setSidebarOpen(true)}
@@ -244,7 +228,6 @@ export default function DashboardLayout({
                         </button>
 
                         {/* Separator */}
-                        <div aria-hidden="true" className="h-6 w-px bg-gray-200 lg:hidden" />
 
                         <div className="flex flex-1 gap-x-4 self-stretch lg:gap-x-6">
                             <form action="#" method="GET" className="relative flex flex-1 items-center">
@@ -298,9 +281,9 @@ export default function DashboardLayout({
                     </div>
                 </main>
 
-                <aside className="fixed inset-y-0 left-72 hidden w-80 overflow-y-auto border-r border-neutral-800 border-blur-xl px-4 py-6 sm:px-6 lg:px-8 xl:block text-primaryText mt-20">
+                <aside className="fixed inset-y-0 left-72 hidden w-80 overflow-y-hidden border-r border-neutral-800 border-blur-xl px-4 py-6 sm:px-6 lg:px-8 xl:block text-primaryText mt-20">
 
-                    <nav className="flex flex-col h-full ">
+                    <nav className="flex flex-col h-full mt-4">
                         <div className='bg-neutral-900 border border-neutral-800 flex items-center p-3 rounded-md'>
                             <Image src={UserAvatar} width={40} height={40} alt="" />
                             <div className='flex flex-col gap-.5 ml-3'>
@@ -317,14 +300,14 @@ export default function DashboardLayout({
                                         onClick={() => item.subNavigation && toggleDropdown(item.name)}
                                         className="group flex items-center gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-primaryText hover:bg-[#262626] hover:text-white"
                                     >
-                                        <item.icon className="h-6 w-6 text-gray-400 group-hover:text-white" />
+                                        <item.icon className="h-6 w-6 text-neutral-400 group-hover:text-white" />
                                         {item.name}
                                     </a>
                                 </li>
                             ))}
                         </ul>
 
-                        <div className="mt-auto bg-neutral-900 p-4 rounded-lg w-auto border border-neutral-800 -mb-[4%]">
+                        <div className="mt-auto bg-neutral-900 p-4 rounded-lg w-auto border border-neutral-800 mb-[2%]">
                             <div className="text-left text-md text-white mb-2">Assigned roles</div>
                             <ul className="list-disc pl-5 text-sm text-primaryText">
                                 <li>Admin</li>
