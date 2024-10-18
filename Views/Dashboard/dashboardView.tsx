@@ -19,7 +19,7 @@ function DashboardView() {
                 <Button><PlusIcon aria-hidden="true" className="h-6 w-6" />Actions</Button>
             </div>
             <div className="border-t mt-5 mb-5 border-neutral-800 w-full" />
-            <div className="grid lg:grid-cols-3 gap-5">
+            <div className="grid md:grid-cols-2 2xl:grid-cols-3 gap-5">
                 {cardData.map((card, index) => (
                     <InfoCard key={index} title={card.title} content={card.content} icon={card.icon} height={card.limitHeight} />
                 ))}
@@ -44,8 +44,8 @@ const cardData = [
             { label: "Date of birth", value: "05/05/2000 (23 years)" },
             { label: "Gender", value: "Unknown" },
             { label: "Attachments", value: "0" },
-            { label: "Registered at", value: "24/04/2024" },
-            { label: "Last login", value: "24/04/2024" },
+            { label: "Registered at", value: "24/04/2024", subText: "22 hours ago" },
+            { label: "Last login", value: "24/04/2024", subText: "22 hours ago" },
         ]
     },
     {
@@ -93,7 +93,7 @@ const cardData = [
             { label: "GmWallet.Bonus Cash", value: "$210.00" },
             { label: "GmWallet.Locked", value: "$0.00" },
             { label: "GmWallet.Negative Remainder", value: "$0.00" },
-            { label: "Available Balance", value: <span className="text-green-500">$10,192.80</span> },
+            { label: "Available Balance", value: <span className="text-lime-400">$10,192.80</span>,changeBorder:true },
         ]
     },
     {
@@ -166,26 +166,29 @@ const InfoCard = ({ title, content, icon, height }: any) => (
             </div>
         </CardHeader>
         <CardContent>
-            <div className="divide-y divide-gray-600">
+            <div className="divide-y divide-neutral-800">
                 {content.map((item: any, index: number) => (
                     <div key={index} className="py-2 flex justify-between">
                         <div className="flex items-center">
                             {item.country && (
-
-                                <div className="w-10 h-10 flex items-center">
+                                <div className="w-10 h-auto flex items-center">
                                     <FlagIcon code={item.country} size={20} />
                                 </div>
                             )}
-                            <span className="text-sm">{item.label}</span>
+                            <span className="text-sm text-neutral-400">{item.label}</span>
                         </div>
                         {item.badge ? (
                             <Badge variant={item.badge.variant}>{item.badge.text}</Badge>
                         ) : (
-                            <>
+                            <div className="flex flex-col">
+                                <span className="text-sm font-medium text-neutral-50">{item.value}</span>
+                                {item.subText &&
+                                    <span className="text-xs text-neutral-500">{item.subText}</span>
 
-                                <span className="text-sm">{item.value}</span>
-                            </>
+                                }
+                            </div>
                         )}
+
                     </div>
                 ))}
             </div>
