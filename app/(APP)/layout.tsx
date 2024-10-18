@@ -148,9 +148,11 @@ export default function DashboardLayout({
                                 src={AppLogo}
                                 className="h-14 w-auto"
                             />
+                      
+
                         </div>
                         <nav className="flex flex-col h-full">
-                            <ul className="flex flex-col gap-y-7 flex-grow">
+                            <ul className="flex flex-col gap-y-3 flex-grow">
                                 {navigation.map((item) => (
                                     <li key={item.name} className="relative">
                                         <a
@@ -307,7 +309,7 @@ export default function DashboardLayout({
                                 </span>
                             </div>
                         </div>
-                        <ul className="flex flex-col gap-y-7 mt-8 flex-grow">
+                        <ul className="flex flex-col gap-y-3 mt-8 flex-grow">
                             {navigation.map((item) => (
                                 <li key={item.name} className="relative">
                                     <a

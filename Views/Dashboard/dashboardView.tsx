@@ -93,7 +93,7 @@ const cardData = [
             { label: "GmWallet.Bonus Cash", value: "$210.00" },
             { label: "GmWallet.Locked", value: "$0.00" },
             { label: "GmWallet.Negative Remainder", value: "$0.00" },
-            { label: "Available Balance", value: <span className="text-lime-400">$10,192.80</span>,changeBorder:true },
+            { label: "Available Balance", value: <span className="text-lime-400">$10,192.80</span>, changeBorder: true },
         ]
     },
     {
@@ -114,38 +114,32 @@ const cardData = [
         limitHeight: true,
         content: [
             {
-                label: "IP 1",
-                value: "154.192.48.49",
+                label: "154.192.48.49",
                 country: "PK",
             },
             {
-                label: "IP 2",
-                value: "192.168.0.1",
+                label: "192.168.0.1",
                 country: "AF",
             },
             {
-                label: "IP 3",
-                value: "203.0.113.1",
+                label: "203.0.113.1",
                 country: "US",
             },
             {
-                label: "IP 4",
-                value: "198.51.100.1",
+                label: "198.51.100.1",
                 country: "GB",
             },
             {
-                label: "IP 5",
-                value: "203.0.113.2",
+                label: "203.0.113.2",
                 country: "DE",
             },
             {
-                label: "IP 6",
-                value: "198.51.100.2",
+                label: "198.51.100.2",
                 country: "FR",
             },
             {
-                label: "IP 7",
-                value: "192.0.2.1",
+               
+                label: "192.0.2.1",
                 country: "JP",
             },
         ],
@@ -161,7 +155,7 @@ const InfoCard = ({ title, content, icon, height }: any) => (
     >
         <CardHeader>
             <div className="flex items-center h-auto space-x-2">
-                <Image src={icon} alt={`${title} Icon`} width={16} height={16} />
+                <Image src={icon} alt={`${title} Icon`} width={20} height={20} />
                 <CardTitle>{title}</CardTitle>
             </div>
         </CardHeader>
