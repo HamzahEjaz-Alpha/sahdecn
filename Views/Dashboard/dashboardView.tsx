@@ -108,7 +108,7 @@ const cardData = [
     },
     {
         title: "IP Addresses",
-        icon: <Image src={IpIcon} alt="" width={13} height={13} />,
+        icon: <Image src={IpIcon} alt="" width={13} height={13} className="hover:text-white"/>,
         limitHeight: true,
         spanFull: true,
         content: [
@@ -145,17 +145,16 @@ const cardData = [
     },
 ];
 const InfoCard = ({ title, content, icon, height, spanFull }: any) => (
-    <Card
-        className={classNames(
-            "w-full bg-neutral-900 text-primaryText border-neutral-700 rounded-lg",
-            height && "h-72 overflow-y-auto",
-            spanFull && "md:col-span-2 2xl:col-span-1"
-        )}
+<Card
+    className={classNames(
+        "w-full bg-neutral-900 text-primaryText border border-neutral-700 rounded-lg transition-all duration-200 hover:border-double hover:border-spacing-5 hover:rounded-2xl  hover:cursor-pointer",
+        height && "h-72 overflow-y-auto",
+        spanFull && "md:col-span-2 2xl:col-span-1"
+    )}
+>
 
-    >
         <CardHeader>
             <div className="flex items-center h-auto space-x-2">
-
                 {icon}
                 <CardTitle>{title}</CardTitle>
             </div>
