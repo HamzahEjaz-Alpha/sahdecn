@@ -121,7 +121,7 @@ export default function DashboardLayout({
                                                             <li key={subItem.name}>
                                                                 <a
                                                                     href={subItem.href}
-                                                                    className="block rounded-md p-2 text-sm font-semibold leading-6 text-gray-600 text-primaryText hover:bg-neutral-800 hover:text-white0"
+                                                                    className="block rounded-md p-2 text-sm font-semibold leading-6 text-primaryText hover:bg-neutral-800 hover:text-white0"
                                                                 >
                                                                     {subItem.name}
                                                                 </a>
@@ -139,7 +139,7 @@ export default function DashboardLayout({
                 </Dialog>
 
                 {/* Static sidebar for desktop */}
-                <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
+                <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-64 lg:flex-col">
                     {/* Sidebar component, swap this element with another sidebar if you like */}
                     <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-neutral-800 bg-neutral-900 px-6">
                         <div className="flex h-16 shrink-0 items-center justify-center mt-4">
@@ -216,8 +216,8 @@ export default function DashboardLayout({
                 </div>
 
               
-                <div className="lg:sticky top-0 z-40 lg:pl-72">
-                    <div className="flex h-24 items-center gap-x-4 border-b border-neutral-800 bg-black px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+                <div className="lg:sticky top-0 z-40 lg:pl-64">
+                    <div className="flex h-24 items-center gap-x-4 border-b border-neutral-800 bg-black px-4 shadow-sm sm:gap-x-6 sm:p-6 lg:px-8">
                         <button
                             type="button"
                             onClick={() => setSidebarOpen(true)}
@@ -277,11 +277,11 @@ export default function DashboardLayout({
 
                 <main className="lg:pl-72 text-primaryText">
                     <div className="xl:pl-72">
-                        <div className="px-4 py-10 sm:px-6 lg:px-12 lg:py-6">{children}</div>
+                        <div className="px-4 py-10 sm:px-6 lg:p-5">{children}</div>
                     </div>
                 </main>
 
-                <aside className="fixed inset-y-0 left-72 hidden w-80 overflow-y-hidden border-r border-neutral-800 border-blur-xl px-4 py-6 sm:px-6 lg:px-8 xl:block text-primaryText mt-20">
+                <aside className="fixed inset-y-0 left-72 hidden w-[18rem] overflow-y-hidden border-r border-neutral-800 border-blur-xl px-4 py-6 sm:px-4  xl:block text-primaryText mt-20">
 
                     <nav className="flex flex-col h-full mt-4">
                         <div className='bg-neutral-900 border border-neutral-800 flex items-center p-3 rounded-md'>
