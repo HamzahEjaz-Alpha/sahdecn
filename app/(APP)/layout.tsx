@@ -281,7 +281,7 @@ export default function DashboardLayout({
                     </div>
                 </main>
 
-                <aside className="fixed inset-y-0 left-[16.5rem] hidden w-[18rem] overflow-y-hidden border-r border-neutral-800 border-blur-xl px-4 py-6 sm:px-4  xl:block text-primaryText mt-20">
+                <aside className="fixed inset-y-0 left-[16rem] hidden w-[18rem] overflow-y-hidden border-r border-neutral-800 border-blur-xl px-4 py-6 sm:px-4  xl:block text-primaryText mt-20">
 
                     <nav className="flex flex-col h-full mt-4">
                         <div className='bg-neutral-900 border border-neutral-800 flex items-center p-3 rounded-md'>
