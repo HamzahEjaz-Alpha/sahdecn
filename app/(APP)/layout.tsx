@@ -275,13 +275,13 @@ export default function DashboardLayout({
                     </div>
                 </div>
 
-                <main className="lg:pl-72 text-primaryText">
+                <main className="lg:pl-[17rem] text-primaryText">
                     <div className="xl:pl-72">
                         <div className="px-4 py-10 sm:px-6 lg:p-5">{children}</div>
                     </div>
                 </main>
 
-                <aside className="fixed inset-y-0 left-72 hidden w-[18rem] overflow-y-hidden border-r border-neutral-800 border-blur-xl px-4 py-6 sm:px-4  xl:block text-primaryText mt-20">
+                <aside className="fixed inset-y-0 left-[16.5rem] hidden w-[18rem] overflow-y-hidden border-r border-neutral-800 border-blur-xl px-4 py-6 sm:px-4  xl:block text-primaryText mt-20">
 
                     <nav className="flex flex-col h-full mt-4">
                         <div className='bg-neutral-900 border border-neutral-800 flex items-center p-3 rounded-md'>
